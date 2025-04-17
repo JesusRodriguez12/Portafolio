@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e20;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
+      background-color: #0e0e20;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: #9f6eff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 300;
+    }
+    .cv-button {
+      border: 1px solid #ffffff80;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: none;
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+      transition: all 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background-color: #6f42c1;
+      border-color: #6f42c1;
+    }
+
+    .container {
+      padding: 80px 10%;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #1a1a2e;
+      color: white;
+    }
+
+    form button {
+      padding: 12px 30px;
+      background-color: #9f6eff;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #6f42c1;
+    }
+
+    /* Estilos del modal */
+    #mensajeModal {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #1a1a2e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      z-index: 1000;
+      color: white;
+      text-align: center;
+    }
+
+    #mensajeModal button {
+      margin-top: 10px;
+      background-color: #9f6eff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+    }
+
+    #mensajeModal button:hover {
+      background-color: #6f42c1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">J<span>R</span></div>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/perfil">Sobre mí</a>
+      <a href="/proyectos">Proyectos</a>
+      <a href="/contacto">Contacto</a>
+    </nav>    
+    <a href="/CV-JESUSALEJANDRORODRIGUEZEUAN.pdf" class="cv-button" download>Descargar CV</a>
+  </header>
+
+  <div class="container">
+    <h1>Contáctame</h1>
+    <form id="form-contacto" action="/enviar" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="text" name="telefono" placeholder="Tu teléfono" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div id="mensajeModal">
+    <p id="mensajeTexto"></p>
+    <button onclick="cerrarModal()">Cerrar</button>
+  </div>
+
+  <script>
+    const form = document.getElementById('form-contacto');
+    const modal = document.getElementById('mensajeModal');
+    const mensajeTexto = document.getElementById('mensajeTexto');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('/enviar', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        mensajeTexto.textContent = result.message || 'Mensaje enviado correctamente';
+        modal.style.display = 'block';
+        form.reset();
+      } catch (error) {
+        mensajeTexto.textContent = 'Ocurrió un error al enviar el mensaje.';
+        modal.style.display = 'block';
+      }
+    });
+
+    function cerrarModal() {
+      modal.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

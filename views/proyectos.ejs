@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyectos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e20;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
+      background-color: #0e0e20;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: #9f6eff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 300;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #9f6eff;
+      text-decoration: none;
+    }
+
+    .cv-button {
+      border: 1px solid #ffffff80;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: none;
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+      transition: all 0.3s ease;
+    }
+
+    .cv-button:hover {
+      border-color: #6f42c1;
+      background-color: #6f42c1;
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 130px 10%;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .project-card {
+      background-color: #1a1a2e;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .card-body {
+      flex-grow: 1;
+    }
+
+    .card-title {
+      color: #9f6eff;
+      font-weight: 700;
+    }
+
+    .card-text {
+      color: #b0b0b0;
+    }
+
+    .btn-primary, .btn-outline-primary {
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-weight: 300;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover, .btn-outline-primary:hover {
+      background-color: #6f42c1;
+      border-color: #6f42c1;
+    }
+
+    .more-text {
+      display: none;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .btn i {
+      margin-right: 5px;
+    }
+
+    .col-md-6 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-card .card-body {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card .card-body.expanded {
+      overflow: visible;
+    }
+
+    .project-card .more-text {
+      display: none;
+    }
+
+    .project-card.expanded .more-text {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">J<span>R</span></div>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/perfil">Sobre mí</a>
+      <a href="/proyectos">Proyectos</a>
+      <a href="/contacto">Contacto</a>
+    </nav>
+    <a href="/CV-JESUSALEJANDRORODRIGUEZEUAN.pdf" class="cv-button" download>Descargar CV</a>
+  </header>
+
+  <div class="container">
+    <h1>Mis Proyectos</h1>
+    <div class="row">
+
+      <!-- Proyecto 1 -->
+      <div class="col-md-6 mb-4"> 
+        <div class="card project-card">
+          <img src="/images/healthy.png" class="card-img-top" alt="Proyecto 1">
+          <div class="card-body">
+            <h5 class="card-title">Aplicación Pacientes y Doctores</h5>
+            <p class="card-text">Aplicación para promover hábitos saludables mediante seguimiento personalizado.</p>
+            
+            <div class="more-text">
+              <p class="card-text">Tecnologías: JavaScript, NodeJs, React Native, MongoDb.</p>
+              <p class="card-text">Objetivo: Ayudar a los usuarios a llevar un control sencillo y motivador de su estilo de vida, impulsando el desarrollo de rutinas saludables.</p>
+            </div>
+
+            <div class="button-group">
+              <button class="btn btn-outline-primary toggle-info">Más información</button>
+              <a href="https://github.com/kitoslordUTM/HealtyNativePlus.git" target="_blank" class="btn btn-primary">
+                <i class="fab fa-github"></i>Ver GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div class="col-md-6 mb-4"> 
+        <div class="card project-card">
+          <img src="/images/csv.avif" class="card-img-top" alt="Proyecto 2">
+          <div class="card-body">
+            <h5 class="card-title">Procesador de Estados de Cuenta Bancarios (Java + RethinkDB)</h5>
+            <p class="card-text">Proyecto desarrollado como parte de mi experiencia en MOVERE FUTURUM SOLUTIONIS, enfocado en la automatización del análisis de estados de cuenta bancarios.</p>
+            <div class="more-text">
+              <p class="card-text">Tecnologías: Java, PDFBox, RethinkDB, SLF4J, CSV, JSON.</p>
+              <p class="card-text">Objetivo:
+                Optimizar el procesamiento y análisis de estados de cuenta bancarios, facilitando su integración en herramientas de gestión contable y bases de datos, todo desde un flujo automatizado, preciso y configurable.</p>
+            </div>
+
+            <div class="button-group">
+              <button class="btn btn-outline-primary toggle-info">Más información</button>
+              <a href="https://github.com/JesusRodriguez12/Accounting.git" target="_blank" class="btn btn-primary">
+                <i class="fab fa-github"></i>Ver GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div class="col-md-6 mb-4"> 
+        <div class="card project-card">
+          <img src="/images/dili.png" class="card-img-top" alt="Proyecto 3">
+          <div class="card-body">
+            <h5 class="card-title">Dilithium – Implementación y Mejora de Criptografía Post-Cuántica en Java</h5>
+            <p class="card-text">Proyecto basado en el esquema de firma digital Dilithium, uno de los candidatos del estándar NIST para criptografía post-cuántica. Participé realizando ajustes y mejoras en el código fuente existente.</p>
+
+            <div class="more-text">
+              <p class="card-text">Tecnologías: Java, Bouncy Castle, Eclipse.</p>
+              <p class="card-text">Objetivo:
+                Contribuir a la mejora de una implementación de criptografía post-cuántica en Java, fortaleciendo su estructura y estabilidad para fines educativos, de investigación o futuros despliegues.</p>
+            </div>
+
+            <div class="button-group">
+              <button class="btn btn-outline-primary toggle-info">Más información</button>
+              <a href="https://github.com/JesusRodriguez12/dilithium-java-Update.git" target="_blank" class="btn btn-primary">
+                <i class="fab fa-github"></i>Ver GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div class="col-md-6 mb-4"> 
+        <div class="card project-card">
+          <img src="/images/RCF.jpg" class="card-img-top" alt="Proyecto 4">
+          <div class="card-body">
+            <h5 class="card-title">Simulaciones de Reconocimiento Facial – Proyecto de Aprendizaje en Visión por Computadora</h5>
+            <p class="card-text">Proyecto integral orientado al estudio de la visión computacional y la interacción con el usuario, aplicando conocimientos de inteligencia artificial, aprendizaje automático y redes neuronales.</p>
+
+            <div class="more-text">
+              <p class="card-text">Tecnologías: Python 3.7.9, OpenCV, dlib, PyQt5 (Qt Designer), NumPy.</p>
+              <p class="card-text">Aplicar conceptos teóricos en un entorno práctico y escalable, integrando visión artificial con desarrollo de interfaces gráficas. El proyecto surgió como una prueba de concepto, evolucionando hasta convertirse en una herramienta de presentación funcional con enfoque en accesibilidad, visualización en tiempo real y expansión futura.</p>
+            </div>
+
+            <div class="button-group">
+              <button class="btn btn-outline-primary toggle-info">Más información</button>
+              <a href="https://github.com/JesusRodriguez12/ReconocimientoFacila-IA.git" target="_blank" class="btn btn-primary">
+                <i class="fab fa-github"></i>Ver GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.toggle-info').forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.card');
+        card.classList.toggle('expanded');
+        const moreText = card.querySelector('.more-text');
+        const isVisible = moreText.style.display === 'block';
+        moreText.style.display = isVisible ? 'none' : 'block';
+        button.textContent = isVisible ? 'Más información' : 'Ver menos información';
+      });
+    });
+  </script>
+
+</body>
+</html>

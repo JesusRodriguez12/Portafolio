@@ -1,0 +1,289 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre mí</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e20;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
+      background-color: #0e0e20;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: #9f6eff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 300;
+    }
+
+    nav a:hover {
+      color: #9f6eff;
+      text-decoration: none;
+    }
+
+    .cv-button {
+      border: 1px solid #ffffff80;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: none;
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+      transition: 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background-color: #6f42c1;
+      border-color: #6f42c1;
+    }
+
+    .main {
+      padding: 120px 10% 60px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .left-panel {
+      flex: 1 1 300px;
+      max-width: 350px;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .left-panel img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #9f6eff50;
+    }
+
+    .right-panel {
+      flex: 2 1 600px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-column {
+      flex: 1 1 300px;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #9f6eff;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .timeline {
+      position: relative;
+      border-left: 3px solid #9f6eff;
+      padding-left: 40px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      background-color: #9f6eff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #9f6eff80;
+    }
+
+    .timeline-date {
+      color: #9f6eff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 5px 0;
+    }
+
+    .timeline-content {
+      background-color: #1a1a2e;
+      padding: 15px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00000030;
+    }
+
+    .timeline-content p {
+      margin: 5px 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .bio-text {
+      margin-top: 20px;
+      font-size: 16px;
+      color: white;
+      line-height: 1.6;
+      max-height: 180px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .bio-button {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px 30px;
+      border-radius: 30px;
+      background-color: #9f6eff;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .bio-button:hover {
+      background-color: #6f42c1;
+    }
+
+    .expanded .bio-text {
+      max-height: 1000px;
+    }
+
+    @media (max-width: 900px) {
+      .right-panel {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">J<span>R</span></div>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/perfil">Sobre mí</a>
+      <a href="/proyectos">Proyectos</a>
+      <a href="/contacto">Contacto</a>
+    </nav>
+    <a href="/CV-JESUSALEJANDRORODRIGUEZEUAN.pdf" class="cv-button" download>Descargar CV</a>
+  </header>
+
+  <section class="main">
+    <div class="left-panel">
+      <img src="/images/cv.jpg" alt="Foto de perfil">
+      <div class="bio-text">
+        <p>Hola! Soy estudiante de Ingeniería en Desarrollo y Gestión de Software en la Universidad Tecnológica Metropolitana. Me apasiona la tecnología, el desarrollo web y el análisis de datos. Disfruto crear soluciones que combinan funcionalidad, diseño y una buena experiencia de usuario.</p>
+        <p>Durante mi formación académica y experiencia profesional, he trabajado en diversos proyectos que van desde aplicaciones bancarias simuladas y plataformas web, hasta el procesamiento automatizado de documentos y el análisis criptográfico. He tenido la oportunidad de desarrollar tanto el frontend como el backend de aplicaciones, lo que me ha permitido tener una visión integral del ciclo de vida del software.</p>
+        <p>Además, he liderado equipos de trabajo, investigado tecnologías emergentes como el cómputo cuántico y contribuido en entornos productivos corrigiendo errores reales. Mi enfoque es siempre seguir aprendiendo, mejorar mis habilidades y aportar soluciones de valor.</p>
+        <p>Me caracterizo por ser proactivo, detallista y comprometido con cada proyecto en el que participo. Estoy siempre dispuesto a asumir nuevos retos que me impulsen a crecer como desarrollador y como persona.</p>
+      </div>
+      <a href="javascript:void(0);" class="bio-button" onclick="toggleBio()">Más sobre mí</a>
+    </div>
+
+    <div class="right-panel">
+      <div class="timeline-column">
+        <h2>Experiencia</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Dic 2022 – Actualidad</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Innovative Soft – Junior Developer</div>
+              <p>Desarrollo en Java, Python, C++. Corrección de errores y soporte en bases de datos.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Jul 2024 – Mar 2025</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Movere Futurum Solutionis – Junior Developer</div>
+              <p>Spring Boot, MongoDB, extracción de datos PDF. Liderazgo de proyecto.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-column">
+        <h2>Educación</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2023 – Presente</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Universidad Tecnológica Metropolitana</div>
+              <p>Ingeniería en Desarrollo y Gestión de Software</p>
+              <p><strong>Proyectos:</strong></p>
+              <ul>
+                <li>Simulador de Cajero Automático (JS, C#, SQL Server, Angular)</li>
+                <li>App de películas con Node.js, Express, MongoDB, JWT</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2019 – 2022</div>
+            <div class="timeline-content">
+              <div class="timeline-title">COBAY – Colegio de Bachilleres del Estado de Yucatán</div>
+              <p><strong>Proyectos:</strong></p>
+              <ul>
+                <li>Página web de venta de libros con HTML y CSS</li>
+                <li>Gestor de inventario con Forms y Visual Basic</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleBio() {
+      const bioSection = document.querySelector('.left-panel');
+      bioSection.classList.toggle('expanded');
+      const button = document.querySelector('.bio-button');
+      if (bioSection.classList.contains('expanded')) {
+        button.textContent = 'Menos sobre mí';
+      } else {
+        button.textContent = 'Más sobre mí';
+      }
+    }
+  </script>
+</body>
+</html>

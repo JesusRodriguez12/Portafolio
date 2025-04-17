@@ -1,0 +1,21 @@
+# node_modules no se sube nunca
+node_modules/
+
+# .env contiene claves privadas
+.env
+
+# Logs
+logs/
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Builds o distribuciones
+dist/
+build/
+
+# Archivos temporales
+*.tmp
+*.swp
