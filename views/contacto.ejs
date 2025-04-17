@@ -39,6 +39,7 @@
       margin: 0 15px;
       font-weight: 300;
     }
+
     .cv-button {
       border: 1px solid #ffffff80;
       padding: 10px 20px;
@@ -117,6 +118,60 @@
 
     #mensajeModal button:hover {
       background-color: #6f42c1;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+
+      .container {
+        padding: 60px 5%;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      form input, form textarea {
+        padding: 10px;
+      }
+
+      form button {
+        padding: 10px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 18px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .container {
+        padding: 50px 5%;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      form button {
+        width: 100%;
+        padding: 12px;
+      }
     }
   </style>
 </head>

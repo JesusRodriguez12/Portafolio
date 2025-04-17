@@ -135,6 +135,75 @@
       width: 80%;
       border-radius: 20px;
     }
+
+    @media (max-width: 1200px) {
+      .hero {
+        flex-direction: column;
+        padding: 60px 5%;
+      }
+
+      .hero-text {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .hero-image {
+        max-width: 60%;
+        margin-top: 30px;
+      }
+
+      .hero-image img {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 20px;
+      }
+
+      .hero {
+        padding: 40px 5%;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      .hero-text p {
+        font-size: 14px;
+      }
+
+      .social-icons a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      .hero {
+        padding: 30px 5%;
+      }
+
+      .hero-text h1 {
+        font-size: 30px;
+      }
+
+      .hero-text p {
+        font-size: 12px;
+      }
+
+      .social-icons a {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+      }
+    }
   </style>
 </head>
 <body>

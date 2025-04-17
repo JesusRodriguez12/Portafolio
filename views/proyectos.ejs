@@ -47,7 +47,6 @@
 
     nav a:hover {
       color: #9f6eff;
-      text-decoration: none;
     }
 
     .cv-button {
@@ -65,7 +64,6 @@
       border-color: #6f42c1;
       background-color: #6f42c1;
       color: white;
-      text-decoration: none;
     }
 
     .container {
@@ -75,7 +73,6 @@
     h1 {
       font-size: 36px;
       margin-bottom: 30px;
-      color: white;
     }
 
     .project-card {
@@ -120,19 +117,11 @@
       border-color: #6f42c1;
     }
 
-    .more-text {
-      display: none;
-    }
-
     .button-group {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       margin-top: 15px;
-    }
-
-    .btn i {
-      margin-right: 5px;
     }
 
     .col-md-6 {
@@ -164,7 +153,6 @@
     .project-card.expanded .more-text {
       display: block;
     }
-
   </style>
 </head>
 <body>
@@ -191,7 +179,6 @@
           <div class="card-body">
             <h5 class="card-title">Aplicación Pacientes y Doctores</h5>
             <p class="card-text">Aplicación para promover hábitos saludables mediante seguimiento personalizado.</p>
-            
             <div class="more-text">
               <p class="card-text">Tecnologías: JavaScript, NodeJs, React Native, MongoDb.</p>
               <p class="card-text">Objetivo: Ayudar a los usuarios a llevar un control sencillo y motivador de su estilo de vida, impulsando el desarrollo de rutinas saludables.</p>
@@ -280,18 +267,15 @@
     </div>
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
-    document.querySelectorAll('.toggle-info').forEach(button => {
-      button.addEventListener('click', () => {
-        const card = button.closest('.card');
-        card.classList.toggle('expanded');
-        const moreText = card.querySelector('.more-text');
-        const isVisible = moreText.style.display === 'block';
-        moreText.style.display = isVisible ? 'none' : 'block';
-        button.textContent = isVisible ? 'Más información' : 'Ver menos información';
+    $(document).ready(function() {
+      $(".toggle-info").click(function() {
+        $(this).closest(".project-card").toggleClass("expanded");
       });
     });
   </script>
-
 </body>
 </html>
